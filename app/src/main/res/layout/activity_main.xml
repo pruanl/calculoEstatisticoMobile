@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.pruan.estatistica.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculo tamanho de amostra"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/edtPopulacao"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true"
+        android:hint="População" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/edtProbFavor"
+        android:layout_alignParentStart="true"
+        android:hint="Probabilidade a Favor"
+        android:layout_below="@+id/edtPopulacao"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/edtProbContra"
+        android:layout_below="@+id/edtProbFavor"
+        android:layout_alignParentStart="true"
+        android:hint="Probabilidade Contra" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/edtConfiabilidade"
+        android:layout_below="@+id/edtProbContra"
+        android:layout_alignParentStart="true"
+        android:hint="Confiabilidade  (%)" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/edtErroEst"
+        android:layout_below="@+id/edtConfiabilidade"
+        android:layout_alignParentStart="true"
+        android:hint="Erro estimado (%)" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calcular"
+        android:id="@+id/btnCalcular"
+        android:layout_below="@+id/edtErroEst"
+        android:layout_alignParentEnd="true"
+        android:onClick="clickOk"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textResult"
+        android:layout_below="@+id/btnCalcular"
+        android:layout_centerHorizontal="true"
+        android:hint="Resultado:" />
+
+
+</RelativeLayout>
