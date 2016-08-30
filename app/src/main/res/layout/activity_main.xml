@@ -33,9 +33,9 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/edtProbFavor"
+        android:id="@+id/edtPiloto"
         android:layout_alignParentStart="true"
-        android:hint="Probabilidade a Favor"
+        android:hint="Total piloto"
         android:layout_below="@+id/edtPopulacao"
         android:layout_alignParentEnd="true" />
 
@@ -44,10 +44,10 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/edtProbContra"
-        android:layout_below="@+id/edtProbFavor"
+        android:id="@+id/edtProbFavor"
+        android:layout_below="@+id/edtPiloto"
         android:layout_alignParentStart="true"
-        android:hint="Probabilidade Contra" />
+        android:hint="Probabilidade a Favor" />
 
     <EditText
         android:layout_width="match_parent"
@@ -55,7 +55,7 @@
         android:inputType="number"
         android:ems="10"
         android:id="@+id/edtConfiabilidade"
-        android:layout_below="@+id/edtProbContra"
+        android:layout_below="@+id/edtProbFavor"
         android:layout_alignParentStart="true"
         android:hint="Confiabilidade  (%)" />
 

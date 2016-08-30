@@ -1,17 +1,15 @@
 package com.example.pruan.estatistica;
 
-import android.icu.text.NumberFormat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private EditText edtPopulacao;
     private EditText edtProbFavor;
-    private EditText edtProbContra;
+    private EditText edtPiloto;
     private EditText edtConfiabilidade;
     private EditText edtErroEst;
     private EditText textResultado;
@@ -32,18 +30,18 @@ public class MainActivity extends AppCompatActivity {
 
         edtPopulacao = (EditText) findViewById(R.id.edtPopulacao);
         edtProbFavor = (EditText) findViewById(R.id.edtProbFavor);
-        edtProbContra = (EditText) findViewById(R.id.edtProbContra);
+        edtPiloto = (EditText) findViewById(R.id.edtPiloto);
         edtConfiabilidade = (EditText) findViewById(R.id.edtConfiabilidade);
         edtErroEst = (EditText) findViewById(R.id.edtErroEst);
         textResultado = (EditText) findViewById(R.id.textResult);
 
     }
 
-    protected void calculoProbabilidade(double favor,double contra){
-        double num = (favor + contra);
+    protected void calculoProbabilidade(double favor,double piloto){
+        double num = piloto;
 
         finFavor = favor/num;
-        finContra = contra/num;
+        finContra = (num-favor)/num;
 
     }
 
@@ -74,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void clickOk(View view){
-        calculoProbabilidade(Double.parseDouble(edtProbFavor.getText().toString()),Double.parseDouble(edtProbContra.getText().toString()));
+        calculoProbabilidade(Double.parseDouble(edtProbFavor.getText().toString()),Double.parseDouble(edtPiloto.getText().toString()));
         confiabilidade = calculoConfiabilidade(Double.parseDouble(edtConfiabilidade.getText().toString()));
         erroEst = calculoErro(Double.parseDouble(edtErroEst.getText().toString()));
 
